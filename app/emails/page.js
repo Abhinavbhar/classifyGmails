@@ -108,7 +108,7 @@ const Email = () => {
     setClassifying(true);
     try {
       const apiKey = localStorage.getItem('apiKey')
-      const response = await axios.post('http://localhost:3000/api/email', {selectedEmails,apiKey});
+      const response = await axios.post('https://classify-gmails-sfgh.vercel.app/api/email', {selectedEmails,apiKey});
       const newClassifications = response.data.result;
       setClassifications(newClassifications);
       localStorage.setItem('classifications', JSON.stringify(newClassifications));
